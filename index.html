@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playable Piano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/296f8022ec.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./img/icons8-piano-96.png">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+
+            <h2 class="title">Playable Piano</h2>
+
+            <div class="column volume-slider">
+                <span>Volume</span>
+                <input id="slider" type="range" min="0" max="1" value="0.5" step="any">
+            </div>
+
+            <div class="column keys-checkbox">
+                <span>Show keys</span>
+                <input type="checkbox" checked>
+            </div>
+        </header>
+
+        <ul class="piano-keys">
+            <li class="key white" id="C"><span>C</span></li>
+            <li class="key black" id="Cs"><span>C#</span></li>
+            <li class="key white" id="D"><span>D</span></li>
+            <li class="key black" id="Ds"><span>D#</span></li>
+            <li class="key white" id="E"><span>E</span></li>
+            <li class="key white" id="F"><span>F</span></li>
+            <li class="key black" id="Fs"><span>F#</span></li>
+            <li class="key white" id="G"><span>G</span></li>
+            <li class="key black" id="Gs"><span>G#</span></li>
+            <li class="key white" id="A"><span>A</span></li>
+            <li class="key black" id="As"><span>A#</span></li>
+            <li class="key white" id="B"><span>B</span></li>
+            <li class="key white" id="C2"><span>C</span></li>
+            <li class="key black" id="Cs2"><span>C#</span></li>
+            <li class="key white" id="D2"><span>D</span></li>
+            <li class="key black" id="Ds2"><span>D#</span></li>
+            <li class="key white" id="E2"><span>E</span></li>
+        </ul>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

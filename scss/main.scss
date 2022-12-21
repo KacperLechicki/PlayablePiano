@@ -1,0 +1,184 @@
+@use 'reset' as *;
+@use 'colors' as colors;
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+	background-image: var(--backgroundGradient);
+}
+
+.wrapper {
+	padding: 3%;
+	width: 550px;
+	background-color: var(--Background);
+	border-radius: 20px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.509);
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--keyNoteLight);
+
+		.title {
+			font-size: 1.6rem;
+			font-weight: lighter;
+		}
+
+		.column {
+			display: flex;
+			align-items: center;
+
+			span {
+				margin-right: 12px;
+				font-weight: lighter;
+				font-size: 1.2rem;
+			}
+		}
+
+		.volume-slider {
+			input {
+				margin-top: 5px;
+				accent-color: var(--lightBlue);
+				outline: none;
+				cursor: pointer;
+			}
+		}
+
+		.keys-checkbox {
+			input {
+				position: relative;
+				appearance: none;
+				margin-top: 3px;
+				width: 40px;
+				height: 20px;
+				background-color: var(--middleBlue);
+				border-radius: 30px;
+				cursor: pointer;
+				outline: none;
+			}
+
+			input::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 2px;
+				transform: translateY(-50%);
+				height: 12px;
+				width: 12px;
+				background-color: var(--lightBlue);
+				border-radius: inherit;
+				transition: all 0.3 ease;
+			}
+
+			input:checked::before {
+				left: 26px;
+				background-color: var(--keyNoteLight);
+			}
+		}
+	}
+
+	.piano-keys {
+		display: flex;
+		margin-top: 40px;
+
+		.key {
+			position: relative;
+			color: var(--keyNoteLight);
+			list-style: none;
+			text-transform: uppercase;
+			user-select: none;
+			cursor: pointer;
+
+			span {
+				visibility: visible;
+				position: absolute;
+				bottom: 20px;
+				width: 100%;
+				font-size: 1.2rem;
+				text-align: center;
+			}
+
+			.hide {
+				visibility: hidden;
+			}
+		}
+
+		.white {
+			width: 60px;
+			height: 160px;
+			background-image: var(--lightKey);
+			border: 1px solid var(--darkBlue);
+			border-radius: 5px;
+
+			&:active {
+				box-shadow: inset -4px 4px 15px rgba(13, 13, 13, 0.2);
+				background-image: linear-gradient(to bottom, #778da9 0%, #506987 100%);
+			}
+		}
+
+		.black {
+			margin: 0 -19px 0 -19px;
+			width: 40px;
+			height: 80px;
+			background-image: var(--darkKey);
+			border-radius: 0 0 3px 3px;
+			z-index: 2;
+
+			&:active {
+				box-shadow: inset -4px 4px 15px rgba(13, 13, 13, 0.105);
+				background-image: linear-gradient(
+					to bottom,
+					rgb(22, 35, 61) 0%,
+					#29415c 100%
+				);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		transform: rotate(90deg);
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.wrapper {
+		width: 720px;
+
+		header {
+			.title {
+				font-size: 2.4rem;
+			}
+
+			.column {
+				span {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		.piano-keys {
+			.white {
+				height: 220px;
+				width: 80px;
+			}
+
+			.black {
+				height: 120px;
+				width: 50px;
+			}
+
+			.key {
+				span {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
